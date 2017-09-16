@@ -1,4 +1,5 @@
 ## Perl 技巧总结
+### 2017-09-17
 #### 感觉Perl是一种糅合了Shell和Python的语言，一旦代码复杂起来可读性相当难以维护。但在处理文本和遍历文件方面确实很好用。
 
 #### Trick-1 正则匹配
@@ -41,7 +42,7 @@ $a 大于$b	1 | 1
 $a 等于$b	0 | 0
 $a 小于$b	-1| -1
 
-这里的$a 和$b其实是perl固有的全局变量(build-in/package globals) , 我们把自定义排序法则的子程序写成: {$a <=>$b} ，perl编译器将得知你定义了的排序法则是采用数字比较大小。我们在对hash按key进行排序时候常用到自定义排序法。例如:
+这里的$a 和$b其实是Perl固有的全局变量(build-in/package globals) , 我们把自定义排序法则的子程序写成: {$a <=>$b} ，perl编译器将得知你定义了的排序法则是采用数字比较大小。我们在对hash按key进行排序时候常用到自定义排序法。例如:
 ```
 foreach $key （sort{$mapword{$b}<=>$mapword{$a}}keys %mapword）{
   print "$mapword{$key} \n";
